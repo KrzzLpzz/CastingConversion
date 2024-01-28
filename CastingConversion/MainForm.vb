@@ -17,12 +17,14 @@
 
             ' Operaciones con los datos
             ' Concatenacion
-            Dim nombreCompleto As String = nombre & " " & apellido
+            Dim nombreCompleto As String = nombre & " " & apellido ' Aqui usamos el proceso de concatenado para poder unir el nombre y apellido en una sola linea
             ' Casting Explicito
-            Dim añoNacimiento As Integer = Date.Today.Year - edad
-            Dim alturaEnCm As Decimal = altura * 100
+            Dim añoNacimiento As Integer = Date.Today.Year - edad ' aqui hacemos el uso de una nueva variable de tipo Int para poder realizar el calculo de la fecha de nacimiento
+            Dim alturaEnCm As Decimal = altura * 100 ' Aqui usando una nueva variable decimal, convertimos la altura dada en decimales y la multiplicamos
+            'por el entero 100, el sistema se encarga de convertir el 100 a decimal para poder obtener el resultado correcto
 
             ' Mostrar resultados en el cuadro de texto de salida - Concatenacion
+            ' Aqui reunimos todos los datos calculados, para unirlos en una sola cadena y realizar la salida de datos en el RichTExtbox
             rtbResultado.Text = "Nombre Completo: " & nombreCompleto & " (Tipo: " & nombreCompleto.GetType().ToString() & ")" & vbCrLf &
                                 "Año de Nacimiento Aproximado: " & añoNacimiento & " (Tipo: " & añoNacimiento.GetType().ToString() & ")" & vbCrLf &
                                 "Altura en Centímetros: " & alturaEnCm & " (Tipo: " & alturaEnCm.GetType().ToString() & ")"
