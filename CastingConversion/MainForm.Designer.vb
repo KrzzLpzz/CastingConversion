@@ -24,6 +24,8 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.txtAltura = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.lblApellido = New System.Windows.Forms.Label()
@@ -35,13 +37,19 @@ Partial Class MainForm
         Me.lblResultado = New System.Windows.Forms.Label()
         Me.rtbResultado = New System.Windows.Forms.RichTextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Edad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Altura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(134, 127)
+        Me.btnIngresar.Location = New System.Drawing.Point(47, 127)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
         Me.btnIngresar.TabIndex = 4
@@ -50,6 +58,8 @@ Partial Class MainForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnSalir)
+        Me.GroupBox1.Controls.Add(Me.btnNuevo)
         Me.GroupBox1.Controls.Add(Me.txtAltura)
         Me.GroupBox1.Controls.Add(Me.btnIngresar)
         Me.GroupBox1.Controls.Add(Me.lblNombre)
@@ -59,12 +69,30 @@ Partial Class MainForm
         Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.txtApellido)
         Me.GroupBox1.Controls.Add(Me.lblAltura)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 14)
+        Me.GroupBox1.Location = New System.Drawing.Point(79, 14)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(342, 169)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingrese sus datos:"
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Location = New System.Drawing.Point(209, 127)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
+        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(128, 127)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo.TabIndex = 6
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'txtAltura
         '
@@ -152,17 +180,54 @@ Partial Class MainForm
         '
         Me.GroupBox2.Controls.Add(Me.rtbResultado)
         Me.GroupBox2.Controls.Add(Me.lblResultado)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 189)
+        Me.GroupBox2.Location = New System.Drawing.Point(79, 189)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(342, 156)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Edad, Me.Altura})
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 351)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(476, 156)
+        Me.DataGridView1.TabIndex = 6
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        Me.Apellido.ReadOnly = True
+        '
+        'Edad
+        '
+        Me.Edad.HeaderText = "Edad"
+        Me.Edad.Name = "Edad"
+        Me.Edad.ReadOnly = True
+        '
+        'Altura
+        '
+        Me.Altura.HeaderText = "Altura"
+        Me.Altura.Name = "Altura"
+        Me.Altura.ReadOnly = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(375, 358)
+        Me.ClientSize = New System.Drawing.Size(500, 519)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -174,6 +239,7 @@ Partial Class MainForm
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -191,4 +257,11 @@ Partial Class MainForm
     Friend WithEvents lblResultado As Label
     Friend WithEvents rtbResultado As RichTextBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Apellido As DataGridViewTextBoxColumn
+    Friend WithEvents Edad As DataGridViewTextBoxColumn
+    Friend WithEvents Altura As DataGridViewTextBoxColumn
 End Class
